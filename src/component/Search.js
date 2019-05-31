@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap'
 
 class Search extends React.Component {
   state = {
@@ -19,28 +20,28 @@ class Search extends React.Component {
 
   onNextPage = () => {
     this.setState({
-        page: this.state.page + 1
+      page: this.state.page + 1
     })
   }
 
   onPreviousPage = () => {
     this.setState({
-        page: this.state.page - 1
+      page: this.state.page - 1
     })
   }
 
   render () {
     return (
-        <div>
-      <form onSubmit={this.onInputSubmit}>
-        <input
-          type='text'
-          value={this.state.recipe}
-          onChange={this.onInputChange}
-        />
-      <button onClick={this.onNextPage}>next page</button>
-      <button onClick={this.onPreviousPage}>previous page</button>
-      </form>
+      <div>
+        <Form onSubmit={this.onInputSubmit}>
+          <Input
+            type='text'
+            value={this.state.recipe}
+            onChange={this.onInputChange}
+          />
+          <Button onClick={this.onNextPage}>next page</Button>
+          <Button onClick={this.onPreviousPage}>previous page</Button>
+        </Form>
       </div>
     )
   }
