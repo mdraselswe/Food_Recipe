@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap'
+import { Form, Input } from 'reactstrap'
 
 class Search extends React.Component {
   state = {
@@ -18,31 +18,16 @@ class Search extends React.Component {
     this.setState({ recipe: e.target.value })
   }
 
-  onNextPage = () => {
-    this.setState({
-      page: this.state.page + 1
-    })
-  }
-
-  onPreviousPage = () => {
-    this.setState({
-      page: this.state.page - 1
-    })
-  }
-
   render () {
     return (
-      <div>
-        <Form onSubmit={this.onInputSubmit}>
-          <Input
-            type='text'
-            value={this.state.recipe}
-            onChange={this.onInputChange}
-          />
-          <Button onClick={this.onNextPage}>next page</Button>
-          <Button onClick={this.onPreviousPage}>previous page</Button>
-        </Form>
-      </div>
+      <Form onSubmit={this.onInputSubmit} className="mt-4">
+        <Input
+          type='text'
+          value={this.state.recipe}
+          onChange={this.onInputChange}
+          placeholder="Please Search Your Food (E.g. Pizza, Pasta, Burger, etc...)"
+        />
+      </Form>
     )
   }
 }

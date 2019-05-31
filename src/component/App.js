@@ -5,9 +5,8 @@ import DisplayRecipe from './DisplayRecipe'
 import './App.css'
 
 class App extends React.Component {
-
   state = {
-    recipes: [],
+    recipes: []
   }
 
   onSearchSubmit = async (recipe, pageNo) => {
@@ -17,13 +16,16 @@ class App extends React.Component {
       `https://www.food2fork.com/api/search?key=${api_key}&q=${recipe}&page=${pageNo}`
     )
     const data = await response.json()
-    this.setState({recipes: data.recipes})
-    console.log(data.recipes);
+
+    this.setState({ recipes: data.recipes })
+
+    console.log(data.recipes)
   }
   render () {
     return (
-      <div className="container">
+      <div className='container'>
         <Search onSubmit={this.onSearchSubmit} />
+
         <DisplayRecipe recipes={this.state.recipes} />
       </div>
     )
