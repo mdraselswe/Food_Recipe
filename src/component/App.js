@@ -24,6 +24,9 @@ class App extends React.Component {
   render () {
     return (
       <div className='container'>
+
+        <h1 className="pt-4 pb-4 text-center" style={{color: '#4a4a4a'}}>Find Your Food Recipe</h1>
+
         <Search onSubmit={this.onSearchSubmit} />
 
         <DisplayRecipe recipes={this.state.recipes} />

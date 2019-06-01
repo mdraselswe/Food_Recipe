@@ -20,7 +20,7 @@ class Search extends React.Component {
 
   render () {
     return (
-      <Form onSubmit={this.onInputSubmit} className="mt-4">
+      <Form onSubmit={this.onInputSubmit} className="mt-4 mb-4">
         <Input
           type='text'
           value={this.state.recipe}
